@@ -1,6 +1,6 @@
 server/node_modules
 server/postgres_data
 
-client1/node_modules
+client/node_modules
 .env
 wait-for-it/
