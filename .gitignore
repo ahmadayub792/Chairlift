@@ -1,0 +1,6 @@
+server/node_modules
+server/postgres_data
+
+client/node_modules
+.env
+wait-for-it/

@@ -1,0 +1,48 @@
+{
+  "name": "ChairLift",
+  "version": "1.0.0",
+  "description": "Full stack app development",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "nodemon src/index.ts --exec ts-node | bunyan -o short",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ahmad Ayub",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^7.4.2",
+    "@hapi/joi": "^15.1.0",
+    "@types/bcrypt": "^3.0.0",
+    "@types/bunyan": "^1.8.6",
+    "@types/convict": "^4.2.1",
+    "@types/hapi__boom": "^7.4.0",
+    "@types/hapi__joi": "^15.0.3",
+    "@types/jsonwebtoken": "^8.3.2",
+    "@types/koa": "^2.0.49",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-bunyan-logger": "^2.1.1",
+    "@types/koa-router": "^7.0.42",
+    "@types/node": "^12.6.8",
+    "@types/uuid": "^3.4.5",
+    "bcrypt": "^3.0.6",
+    "bunyan": "^1.8.12",
+    "convict": "^5.1.0",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-bunyan-logger": "^2.1.0",
+    "koa-router": "^7.4.0",
+    "njwt": "^1.0.0",
+    "nodemon": "^1.19.1",
+    "pg": "^7.12.0",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^5.10.3",
+    "typeorm": "^0.2.18",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  }
+}

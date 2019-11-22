@@ -1,0 +1,22 @@
+{
+  "sqltools.connections": [
+    {
+      "database": "airflow",
+      "dialect": "MySQL",
+      "name": "airflow",
+      "password": "root",
+      "port": 3306,
+      "server": "localhost",
+      "username": "root"
+    },
+    {
+      "database": "chairlift",
+      "dialect": "PostgreSQL",
+      "name": "Chairlift",
+      "password": "docker",
+      "port": 5432,
+      "server": "localhost",
+      "username": "postgres"
+    }
+  ]
+}

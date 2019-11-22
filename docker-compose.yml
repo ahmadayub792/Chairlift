@@ -1,0 +1,55 @@
+version: '3'
+
+services: 
+
+############################
+#   Setup node Container   #
+############################
+
+  server:
+    build: ./server
+    expose:
+      - ${APP_SERVER_PORT}
+    environment:
+      API_HOST: ${API_HOST}
+      APP_SERVER_PORT: ${APP_SERVER_PORT}
+    ports:
+      - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
+    volumes:
+      - ./server/src:/srv/app/CL_backend/src
+    command: ["./wait-for-it.sh","db:5432","--","npm","start"]
+
+############################
+#  Setup client container  #
+############################
+  
+  client:
+    build: ./client
+    environment:
+      - REACT_APP_PORT=${REACT_APP_PORT}
+    expose:
+      - ${REACT_APP_PORT}
+    ports:
+      - ${REACT_APP_PORT}:${REACT_APP_PORT}
+    volumes:
+      - ./client/src:/srv/app/CL-frontend
+      - ./client/public:/srv/app/CL-frontend/public
+    links:
+      - server
+    command: npm run start
+
+
+############################
+#      Setup Database      #
+############################
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGERS_PASSWORD=docker
+      - POSTGRES_DB=chairlift
+    volumes:
+      - ./server/postgre-data:/var/lib/postegresql/data
+    ports:
+      - 5432:5432
