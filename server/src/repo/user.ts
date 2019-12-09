@@ -20,6 +20,7 @@ export async function createUser(username: string, password: string) {
   const user = await userRepo.save(userRepo.create({
     username,
     password: hashPass,
+    status: 'idle'
   }));
 
   delete user.password;

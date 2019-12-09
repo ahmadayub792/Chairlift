@@ -1,9 +1,14 @@
-import {Entity, PrimaryGeneratedColumn,Column } from "typeorm"
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
+import Ride from './Ride'
 
 @Entity()
 export default class Bus {
   @PrimaryGeneratedColumn("increment")
   public id: number;
 
-  @Column("simple-json")
+  @Column("simple-array")
+  public route: number[];
+
+  @OneToMany(()=> Ride,(ride: Ride ) => ride.bus)
+  public rides: Ride[];
 }

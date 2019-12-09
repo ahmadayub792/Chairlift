@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn} from "typeorm";
+import Ride from "./Ride";
 
 @Entity()
 export default class User {
@@ -10,5 +11,12 @@ export default class User {
 
   @Column("text", { select: false})
   public password: string;
+
+  @Column("text")
+  public status: string;
+
+  @ManyToMany(() => Ride, (ride: Ride) => ride.users)
+  @JoinTable()
+  public rides: Ride[]
 
 }

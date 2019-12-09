@@ -13,6 +13,7 @@ export async function create(ctx: Koa.Context): Promise<void> {
   const schema = Joi.object().keys({
     username: Joi.string().min(8).max(255).required(),
     password: Joi.string().min(8).max(30).required(),
+    status: Joi.string()
   });
 
   const { error, value } = schema.validate({
