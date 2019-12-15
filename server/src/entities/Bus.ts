@@ -1,6 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
 import Ride from './Ride'
-import { number } from "@hapi/joi";
 
 @Entity()
 export default class Bus {
@@ -8,7 +7,7 @@ export default class Bus {
   public id: number;
 
   @Column("simple-array")
-  public route: number[];
+  public route: string[];
 
   @Column("int")
   public capacity: number;

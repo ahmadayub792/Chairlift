@@ -50,6 +50,6 @@ services:
       - POSTGERS_PASSWORD=docker
       - POSTGRES_DB=chairlift
     volumes:
-      - ./server/postgre-data:/var/lib/postegresql/data
+      - ./postgres-data:/var/lib/postegresql/data
     ports:
       - 5432:5432
