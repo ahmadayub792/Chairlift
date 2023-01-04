@@ -26,7 +26,7 @@
     "@types/uuid": "^3.4.5",
     "bcrypt": "^3.0.6",
     "bunyan": "^1.8.12",
-    "convict": "^5.1.0",
+    "convict": "^6.2.3",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-bunyan-logger": "^2.1.0",
